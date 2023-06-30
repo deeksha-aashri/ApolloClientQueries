@@ -1,11 +1,15 @@
 import { useQuery, gql } from '@apollo/client';
+import React from 'react';
 import { useState } from 'react';
 const GET_CONTINENTS= gql`
 query getcontinents{
   continents{
     name
     code
-    #countries  how to select sub fields?
+    countries {
+      name
+      code
+    }
   }
 }
 `
